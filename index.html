@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+ <head> 
+  <meta charset="UTF-8"> 
+  <title>Decode</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="author" content="Felix Onkangi"> 
+  <meta name="description" content="music web app,simple,interactive"> 
+  <meta name="keywords" content="music streaming, web playlist"> 
+  <link rel="shortcut icon" href="images/decode.png" type="decode"> 
+  <!--@bootstrapCss--> 
+  <link rel="stylesheet" href="css/bootstrap.min.css"> 
+  <!--custom css--> 
+  <link rel="stylesheet" href="css/style.css"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"> </script> 
+ </head> 
+ <body> 
+  <article class="screen"> 
+   <input type="checkbox" value="None" id="magicButton" name="check" < input> 
+   <label class="main" for="magicButton"></label> 
+   <div class="container"> 
+    <div draggable="true" class="box">
+     A 
+    </div> 
+    <div draggable="true" class="box">
+     B 
+    </div> 
+    <div draggable="true" class="box">
+      C 
+    </div> 
+   </div> 
+   <div class="coverImage"></div> 
+   <div class="search"></div> 
+   <div class="bodyPlayer"></div> 
+   <table class="list"> 
+    <tbody>
+     <tr class="song"> 
+      <td class="nr"> <h5>1</h5><h5></h5></td> 
+      <td class="title"><h6>Angelina</h6><h6></h6></td> 
+      <td class="length"><h5>3:54</h5><h5></h5></td> 
+      <td><input type="checkbox" id="heart"><label class="zmr" for="heart"></label></td> 
+     </tr> 
+     <tr class="song"> 
+      <td class="nr"><h5>2 </h5><h5></h5></td> 
+      <td class="title"><h6 style="color: purple;">StressedOut </h6><h6> </h6></td> 
+      <td class="length"><h5>3:22</h5><h5></h5></td> 
+      <td><input type="checkbox" id="heart1" checked><label class="zmr" for="heart1"></label></td> 
+     </tr> 
+     <tr class="song"> 
+      <td class="nr"><h5>3</h5><h5></h5></td> 
+      <td class="title"><h6>Ride </h6><h6></h6></td> 
+      <td class="length"><h5>3:34 </h5><h5></h5></td> 
+      <td><input type="checkbox" id="heart2"><label class="zmr" for="heart2"></label></td> 
+     </tr> 
+     <tr class="song"> 
+      <td class="nr"><h5>4</h5><h5></h5></td> 
+      <td class="title"><h6>Fairy Local</h6><h6></h6></td> 
+      <td class="length"><h5>3:27</h5><h5></h5></td> 
+      <td><input type="checkbox" id="heart3" checked><label class="zmr" for="heart3"></label></td> 
+     </tr> 
+     <tr class="song"> 
+      <td class="nr"><h5>5</h5><h5></h5></td> 
+      <td class="title"><h6>Tear in My Heart</h6><h6></h6></td> 
+      <td class="length"><h5>3:08</h5><h5></h5></td> 
+      <td><input type="checkbox" id="heart4"><label class="zmr" for="heart4"></label></td> 
+     </tr> 
+     <tr class="song"> 
+      <td class="nr"><h5>6</h5><h5></h5></td> 
+      <td class="title"><h6>Lane Boy</h6><h6></h6></td> 
+      <td class="length"><h5>4:13</h5><h5></h5></td> 
+      <td><input type="checkbox" id="heart5"><label class="zmr" for="heart5"></label></td> 
+     </tr> 
+     <tr class="song"> 
+      <td class="nr"><h5>7</h5><h5></h5></td> 
+      <td class="title"><h6>The Judge</h6><h6></h6></td> 
+      <td class="length"><h5>4:57</h5><h5></h5></td> 
+      <td><input type="checkbox" id="heart6"><label class="zmr" for="heart6"></label></td> 
+     </tr> 
+     <tr class="song"> 
+      <td class="nr"><h5>8</h5><h5></h5></td> 
+      <td class="title"><h6>Doubt</h6><h6></h6></td> 
+      <td class="length"><h5>3:11</h5><h5></h5></td> 
+      <td><input type="checkbox" id="heart7"><label class="zmr" for="heart7"></label></td> 
+     </tr> 
+     <tr class="song"> 
+      <td class="nr"><h5>9</h5><h5></h5></td> 
+      <td class="title"><h6>Polarize</h6><h6></h6></td> 
+      <td class="length"><h5>3:46</h5><h5></h5></td> 
+      <td><input type="checkbox" id="heart8"><label class="zmr" for="heart8"></label></td> 
+     </tr> 
+    </tbody>
+   </table> 
+   <div class="shadow"></div> 
+   <div class="bar"></div> 
+   <div class="info"> 
+    <h4>Circles </h4> 
+    <h3> circles </h3> 
+   </div> 
+   <audio preload="auto" id="audio" controls> 
+    <source src="http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3"> 
+    <source src="http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.ogg"> 
+   </audio> 
+   <table class="player"> 
+    <tbody>
+     <tr>
+      <td><input type="checkbox" id="backward"> <label class="backward" for="backward"></label></td> 
+      <td><input type="checkbox" id="play" title="Play" onclick="togglePlayPause()"> <label class="play" for="play"></label> </td> 
+      <td><input type="checkbox" id="forward"><label class="forward" for="forward"></label></td> 
+     </tr>
+    </tbody>
+   </table> 
+   <table class="footer"> 
+    <tbody>
+     <tr>
+      <td><input type="checkbox" id="love" checked><label class="love" for="love"></label></td> 
+      <td><input type="checkbox" id="shuffle"> <label class="shuffle" for="shuffle"></label></td> 
+      <td><input type="checkbox" id="repeat" checked><label class="repeat" for="repeat"></label></td> 
+      <td><input type="checkbox" id="options"> <label class="options" for="options"></label></td> 
+     </tr>
+    </tbody>
+   </table> 
+   <div class="current">
+    <h2>Circles</h2>
+   </div> 
+  </article> 
+  <img src="images/decode.png" alt"decode" width="78" length="100"> 
+  <nav class="navbar navbar-default navbar-fixed-top"> 
+   <div class="container-fluid"> 
+    <div class="navbar-header"> 
+     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <img src="images/decode.png" alt"decode" width="78" length="100">  
+    </div> 
+    <div class="collapse navbar-collapse" id="myNavbar"> 
+     <ul class="nav navbar-nav navbar-right"> 
+      <li><a href="#home">HOME</a></li> 
+      <li><a href="#band">BAND</a></li> 
+      <li><a href="#tour">TOURS</a></li> 
+      <li><a href="#contact">CONTACT</a></li> 
+      <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE <span class="caret"></span> </a> 
+       <ul class="dropdown-menu"> 
+        <li><a href="#">Merchandise</a></li> 
+        <li><a href="#">Extras</a></li> 
+        <li><a href="#">Media</a></li> 
+       </ul> </li> 
+      <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li> 
+     </ul> 
+    </div> 
+   </div> 
+  </nav> 
+  <div class="container text-center"> 
+   <style>.container {
+padding:60px 100px;
+}
+</style> 
+   <h3>Live for music 🎶</h3> 
+   <p><em>We love music!</em></p> 
+   <p>We created the music platform..</p> 
+  </div> 
+  <!--@reactjsWrapper--> 
+  <script src="js/react.production.min.js"></script> 
+  <script src="js/react-dom.production.min.js"></script> 
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script> 
+  <script type="babel">
+const getMessage = () => "Enjoy streaming";
+document.getElementById('output').innerHTML = getMessage();
+</script> 
+  <script type="text/babel" src="js/app.js"></script> 
+  <!--main js--> 
+  <script src="js/main.js"></script>  
+  <details> 
+   <summary>Copyright 2021. </summary> 
+   <p> - by Decode® Data. All Rights Reserved.</p> 
+   <p>All content and graphics on this web site are the property of the company Decode® Data.</p> 
+  </details> 
+  <footer> 
+   <p class="programminghero">Learned and developed this site with <a href="http://www.programming-hero.com">Programming Hero</a></p> 
+  </footer>
+ </body>
+</html>
